@@ -1,19 +1,19 @@
 integrations:
   - name: nri-mssql
     env:
-      HOSTNAME: "192.168.1.100"                 # Ganti dengan IP/hostname SQL Server
-      USERNAME: "newrelic_user"                 # Ganti dengan user yang punya permission SELECT
-      PASSWORD: "secure_password_123"           # Ganti dengan password
+      HOSTNAME: "192.168.1.100" # Ganti dengan IP/hostname SQL Server
+      USERNAME: "newrelic_user" # Ganti dengan user yang punya permission SELECT
+      PASSWORD: "secure_password_123" # Ganti dengan password
 
       # Gunakan salah satu: PORT atau INSTANCE (tapi jangan dua-duanya)
       PORT: "1433"
       # INSTANCE: "SQLEXPRESS"
 
       ENABLE_SSL: "true"
-      TRUST_SERVER_CERTIFICATE: "true"          # Set true kalau tidak pakai verifikasi sertifikat
+      TRUST_SERVER_CERTIFICATE: "true" # Set true kalau tidak pakai verifikasi sertifikat
       # CERTIFICATE_LOCATION: "/path/to/cert.pem"
 
-      TIMEOUT: "10"                             # Timeout query SQL dalam detik
+      TIMEOUT: "10" # Timeout query SQL dalam detik
 
       ENABLE_BUFFER_METRICS: "true"
       ENABLE_DATABASE_RESERVE_METRICS: "true"
@@ -24,7 +24,7 @@ integrations:
 
       # Aktifkan Query Monitoring
       ENABLE_QUERY_MONITORING: "true"
-      QUERY_MONITORING_RESPONSE_TIME_THRESHOLD: "500"    # dalam ms (slow query = >500ms)
+      QUERY_MONITORING_RESPONSE_TIME_THRESHOLD: "500" # dalam ms (slow query = >500ms)
       QUERY_MONITORING_COUNT_THRESHOLD: "20"
       QUERY_MONITORING_FETCH_INTERVAL: "15"
 
@@ -33,6 +33,6 @@ integrations:
     labels:
       env: production
       role: mssql
-      db_hostname: sql-prod-01                  # Label berguna untuk filtering di dashboard
+      db_hostname: sql-prod-01 # Label berguna untuk filtering di dashboard
 
     inventory_source: config/mssql
